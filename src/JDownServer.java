@@ -4,7 +4,9 @@ public class JDownServer
 
 	public static void main(String[] args)
 	{
-		// TODO Auto-generated method stub
+		JImap imap = new JImap();
+		
+		imap.retrieve_emails();
 
 	}
 

@@ -1,10 +1,11 @@
 *.class
 
+.classpath
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.ear
 
@@ -57,3 +58,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Project Configuration File
+*.properties
+
+/bin/

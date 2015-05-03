@@ -11,7 +11,7 @@ public class JPropertiesFile
 {
 	private final String file_name_;
 	
-	JPropertiesFile(String file_name)
+	JPropertiesFile(final String file_name)
 	{
 		file_name_ = file_name;
 	}
@@ -29,7 +29,7 @@ public class JPropertiesFile
 		}
 	}
 	
-	protected Properties load()
+	protected final Properties load()
 	{
 		if(!file_name_.isEmpty())
 		{
