@@ -21,17 +21,23 @@ public class JImap
 			
 			Folder inbox = store.getFolder("Inbox");
 			inbox.open(Folder.READ_ONLY);
-			Message msg = inbox.getMessage(inbox.getMessageCount());
+			
+			final int msg_count = inbox.getMessageCount();
+			
+			for(int i=1; i<msg_count; ++i)
+			{
+				Message msg = inbox.getMessage(i);
 
-			Address[] in = msg.getFrom();
-            for (Address address : in) {
-                System.out.println("FROM:" + address.toString());
-            }
-            Multipart mp = (Multipart) msg.getContent();
-            BodyPart bp = mp.getBodyPart(0);
-            System.out.println("SENT DATE:" + msg.getSentDate());
-            System.out.println("SUBJECT:" + msg.getSubject());
-            System.out.println("CONTENT:" + bp.getContent());
+				Address[] in = msg.getFrom();
+	            for (Address address : in) {
+	                System.out.println("FROM:" + address.toString());
+	            }
+	            Multipart mp = (Multipart) msg.getContent();
+	            BodyPart bp = mp.getBodyPart(0);
+	            System.out.println("SENT DATE:" + msg.getSentDate());
+	            System.out.println("SUBJECT:" + msg.getSubject());
+	            System.out.println("CONTENT:" + bp.getContent());
+			}
             
             inbox.close(false);
             store.close();
