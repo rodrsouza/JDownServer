@@ -49,7 +49,7 @@ public class JImap
 			
 			messages_retrieved_.clear();
 			
-			for(int i=1; i<msg_count; ++i)
+			for(int i=1; i<=msg_count; ++i)
 			{
 				Message msg = inbox.getMessage(i);
 				messages_retrieved_.add(msg);
